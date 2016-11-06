@@ -1,0 +1,1 @@
+json.extract! @person, :id, :title, :forename, :surname, :email, :dob, :phone_number, :address1, :address2, :address3, :postcode, :license_type, :license_period, :occupation, :number_of_claims, :unique_string, :created_at, :updated_at

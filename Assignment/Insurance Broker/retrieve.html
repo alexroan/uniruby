@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <script src="jquery.min.js"></script>
+    <script src="broker_jquery.js"></script>
+    <script src="broker_functions.js"></script>  
+        
+    <title>Insurance</title>
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="dist/css/signin.css" rel="stylesheet">
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+      <div class="container">
+          <form class="form-signin" name="home_button_form" action="index.html">  
+              <button class="btn btn-lg btn-primary btn-block" id="home_button" type="submit">Home</button>
+          </form>
+          <div class="form-signin" id="policy_retrieve" name="policy_retrieve">
+              <h2 class="form-signin-heading" id="policy_excess_title">Your Policy Excess</h2>
+              <input type="text" name="retrieveemail" id="retrieveemail" class="form-control" placeholder="Email" required>
+              <input type="text" name="retrieveidentifier" id="retrieveidentifier" class="form-control" placeholder="Policy Identifier" required>
+              <button class="btn btn-lg btn-primary btn-block" id="retrieve_button" type="submit">Submit</button>
+              <h3 class="form-signin-heading" id="policy_excess"></h3>
+              <h3 class="form-signin-heading" id="policy_breakdown_cover"></h3>
+              <h3 class="form-signin-heading" id="policy_windscreen_cover"></h3>
+          </div>
+          
+      </div>
+  </body>
+</html>

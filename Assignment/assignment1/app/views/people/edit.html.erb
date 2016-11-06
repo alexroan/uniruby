@@ -1,0 +1,6 @@
+<h1>Editing person</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', person_path(@person, page: @current_page) %> |
+<%= link_to 'Back', people_path(page: @current_page) %>

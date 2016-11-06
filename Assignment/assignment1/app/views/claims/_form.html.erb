@@ -1,0 +1,39 @@
+<%= form_for(@claim) do |f| %>
+  <% if @claim.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@claim.errors.count, "error") %> prohibited this claim from being saved:</h2>
+
+      <ul>
+      <% @claim.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <% hidden_field_tag 'page', @current_page %>
+
+  <div class="field">
+    <%= f.label :claim_date %><br>
+    <%= f.date_select :claim_date %>
+  </div>
+  <div class="field">
+    <%= f.label :value %><br>
+    <%= f.number_field :value %>
+  </div>
+  <div class="field">
+    <%= f.label :claim_type %><br>
+    <%= f.text_field :claim_type %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :person_pk %><br>
+    <%= f.number_field :person_pk %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

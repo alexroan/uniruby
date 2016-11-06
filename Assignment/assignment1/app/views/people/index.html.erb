@@ -1,0 +1,62 @@
+<h1>Listing people</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Forename</th>
+      <th>Surname</th>
+      <th>Email</th>
+      <th>Dob</th>
+      <th>Phone number</th>
+      <th>Address1</th>
+      <th>Address2</th>
+      <th>Address3</th>
+      <th>Postcode</th>
+      <th>License type</th>
+      <th>License period</th>
+      <th>Occupation</th>
+      <th>Number of claims</th>
+      <th>Unique String</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @people.each do |person| %>
+      <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+        <td><%= person.title %></td>
+        <td><%= person.forename %></td>
+        <td><%= person.surname %></td>
+        <td><%= person.email %></td>
+        <td><%= person.dob %></td>
+        <td><%= person.phone_number %></td>
+        <td><%= person.address1 %></td>
+        <td><%= person.address2 %></td>
+        <td><%= person.address3 %></td>
+        <td><%= person.postcode %></td>
+        <td><%= person.license_type %></td>
+        <td><%= person.license_period %></td>
+        <td><%= person.occupation %></td>
+        <td><%= person.number_of_claims %></td>
+        <td><%= person.unique_string %></td>
+        <td><%= link_to 'Show', person %></td>
+        <td><%= link_to 'Edit', edit_person_path(person) %></td>
+        <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br/>
+<div class="digg_pagination">
+  <div>
+    <%= page_entries_info @people %>
+  </div>
+  <%= will_paginate @people, container: false %>
+</div>
+<br/>
+
+<%= link_to 'New Person', new_person_path(page: @people.current_page) %>

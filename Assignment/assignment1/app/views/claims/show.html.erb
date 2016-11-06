@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Claim date:</strong>
+  <%= @claim.claim_date %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @claim.value %>
+</p>
+
+<p>
+  <strong>Claim type:</strong>
+  <%= @claim.claim_type %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @claim.description %>
+</p>
+
+<p>
+  <strong>Person pk:</strong>
+  <%= @claim.person_pk %>
+</p>
+
+<%= link_to 'Edit', edit_claim_path(@claim, page: @current_page) %> |
+<%= link_to 'Back', claims_path(page: @current_page) %>

@@ -1,0 +1,42 @@
+<h1>Listing claims</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Claim date</th>
+      <th>Value</th>
+      <th>Claim type</th>
+      <th>Description</th>
+      <th>Person pk</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @claims.each do |claim| %>
+      <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+        <td><%= claim.claim_date %></td>
+        <td><%= claim.value %></td>
+        <td><%= claim.claim_type %></td>
+        <td><%= claim.description %></td>
+        <td><%= claim.person_pk %></td>
+        <td><%= link_to 'Show', claim %></td>
+        <td><%= link_to 'Edit', edit_claim_path(claim) %></td>
+        <td><%= link_to 'Destroy', claim, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br/>
+<div class="digg_pagination">
+  <div>
+    <%= page_entries_info @claims %>
+  </div>
+  <%= will_paginate @people, container: false %>
+</div>
+
+<br>
+
+<%= link_to 'New Claim', new_claim_path(page: @claims.current_page) %>

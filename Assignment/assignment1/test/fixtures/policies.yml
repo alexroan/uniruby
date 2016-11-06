@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  excess: 1
+  breakdown_cover: MyString
+  windscreen_cover: false
+  person_pk: 1
+
+two:
+  excess: 1
+  breakdown_cover: MyString
+  windscreen_cover: false
+  person_pk: 1

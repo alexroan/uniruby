@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  claim_date: 2013-11-19
+  value: 1
+  claim_type: MyString
+  description: MyString
+  person_pk: 1
+
+two:
+  claim_date: 2013-11-19
+  value: 1
+  claim_type: MyString
+  description: MyString
+  person_pk: 1

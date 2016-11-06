@@ -1,0 +1,45 @@
+<h1>Listing vehicles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Registration</th>
+      <th>Annual mileage</th>
+      <th>Value</th>
+      <th>Parking location</th>
+      <th>Policy start date</th>
+      <th>Person pk</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vehicles.each do |vehicle| %>
+      <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+        <td><%= vehicle.registration %></td>
+        <td><%= vehicle.annual_mileage %></td>
+        <td><%= vehicle.value %></td>
+        <td><%= vehicle.parking_location %></td>
+        <td><%= vehicle.policy_start_date %></td>
+        <td><%= vehicle.person_pk %></td>
+        <td><%= link_to 'Show', vehicle %></td>
+        <td><%= link_to 'Edit', edit_vehicle_path(vehicle) %></td>
+        <td><%= link_to 'Destroy', vehicle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<div class="digg_pagination">
+  <div>
+    <%= page_entries_info @vehicles %>
+  </div>
+  <%= will_paginate @vehicles, container: false %>
+</div>
+<br/>
+
+<%= link_to 'New Vehicle', new_vehicle_path(page: @vehicles.current_page) %>

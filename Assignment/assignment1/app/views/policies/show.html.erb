@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Excess:</strong>
+  <%= @policy.excess %>
+</p>
+
+<p>
+  <strong>Breakdown cover:</strong>
+  <%= @policy.breakdown_cover %>
+</p>
+
+<p>
+  <strong>Windscreen cover:</strong>
+  <%= @policy.windscreen_cover %>
+</p>
+
+<p>
+  <strong>Person pk:</strong>
+  <%= @policy.person_pk %>
+</p>
+
+<%= link_to 'Edit', edit_policy_path(@policy) %> |
+<%= link_to 'Back', policies_path %>

@@ -1,0 +1,92 @@
+class PoliciesController < ApplicationController
+  before_action :set_current_page, except: [:index]
+  before_action :set_policy, only: [:show, :edit, :update, :destroy]
+
+  # GET /policies
+  # GET /policies.json
+  def index
+    @policies = Policy.paginate page: params[:page],
+                                per_page: params[:per_page],
+                                order: 'excess'
+  end
+
+  # GET /policies/1
+  # GET /policies/1.json
+  def show
+
+  end
+
+  # GET /policy/:person_pk
+  def find_by_person_pk
+    @policy = Policy.find_by_person_pk(params[:person_pk])
+    respond_to do |format|
+      format.json { render action: 'show', location: @policy }
+    end
+  end
+
+
+  # GET /policies/new
+  def new
+    @policy = Policy.new
+  end
+
+  # GET /policies/1/edit
+  def edit
+  end
+
+  # POST /policies
+  # POST /policies.json
+  def create
+    @policy = Policy.new(policy_params)
+    @policy.excess = 50 + Random.rand(2000)
+
+    respond_to do |format|
+      if @policy.save
+        format.html { redirect_to @policy, notice: 'Policy was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @policy }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @policy.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # PATCH/PUT /policies/1
+  # PATCH/PUT /policies/1.json
+  def update
+    respond_to do |format|
+      if @policy.update(policy_params)
+        format.html { redirect_to @policy, notice: 'Policy was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: 'edit' }
+        format.json { render json: @policy.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /policies/1
+  # DELETE /policies/1.json
+  def destroy
+    @policy.destroy
+    respond_to do |format|
+      format.html { redirect_to policies_url }
+      format.json { head :no_content }
+    end
+  end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_policy
+      @policy = Policy.find(params[:id])
+    end
+
+    def set_current_page
+      @current_page = params[:page] || 1
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def policy_params
+      params.require(:policy).permit(:excess, :breakdown_cover, :windscreen_cover, :person_pk)
+    end
+end

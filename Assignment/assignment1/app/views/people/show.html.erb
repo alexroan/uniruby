@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @person.title %>
+</p>
+
+<p>
+  <strong>Forename:</strong>
+  <%= @person.forename %>
+</p>
+
+<p>
+  <strong>Surname:</strong>
+  <%= @person.surname %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @person.email %>
+</p>
+
+<p>
+  <strong>Dob:</strong>
+  <%= @person.dob %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @person.phone_number %>
+</p>
+
+<p>
+  <strong>Address1:</strong>
+  <%= @person.address1 %>
+</p>
+
+<p>
+  <strong>Address2:</strong>
+  <%= @person.address2 %>
+</p>
+
+<p>
+  <strong>Address3:</strong>
+  <%= @person.address3 %>
+</p>
+
+<p>
+  <strong>Postcode:</strong>
+  <%= @person.postcode %>
+</p>
+
+<p>
+  <strong>License type:</strong>
+  <%= @person.license_type %>
+</p>
+
+<p>
+  <strong>License period:</strong>
+  <%= @person.license_period %>
+</p>
+
+<p>
+  <strong>Occupation:</strong>
+  <%= @person.occupation %>
+</p>
+
+<p>
+  <strong>Number of claims:</strong>
+  <%= @person.number_of_claims %>
+</p>
+
+<p>
+  <strong>Unique String</strong>
+  <%= @person.unique_string %>
+</p>
+
+<%= link_to 'Edit', edit_person_path(@person, page: @current_page) %> |
+<%= link_to 'Back', people_path(page: @current_page) %>

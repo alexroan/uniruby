@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  forename: MyString
+  surname: MyString
+  email: "1@me.com"
+  dob: 2013-11-15
+  phone_number: MyString
+  address1: MyString
+  address2: MyString
+  address3: MyString
+  postcode: MyString
+  license_type: MyString
+  license_period: 1
+  occupation: MyString
+  number_of_claims: 1
+  unique_string: a
+
+two:
+  title: MyString
+  forename: MyString
+  surname: MyString
+  email: "2@me.com"
+  dob: 2013-11-15
+  phone_number: MyString
+  address1: MyString
+  address2: MyString
+  address3: MyString
+  postcode: MyString
+  license_type: MyString
+  license_period: 1
+  occupation: MyString
+  number_of_claims: 1
+  unique_string: b

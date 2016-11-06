@@ -1,0 +1,40 @@
+<h1>Listing policies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Excess</th>
+      <th>Breakdown cover</th>
+      <th>Windscreen cover</th>
+      <th>Person pk</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @policies.each do |policy| %>
+      <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+        <td><%= policy.excess %></td>
+        <td><%= policy.breakdown_cover %></td>
+        <td><%= policy.windscreen_cover %></td>
+        <td><%= policy.person_pk %></td>
+        <td><%= link_to 'Show', policy %></td>
+        <td><%= link_to 'Edit', edit_policy_path(policy) %></td>
+        <td><%= link_to 'Destroy', policy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<div class="digg_pagination">
+  <div>
+    <%= page_entries_info @policies %>
+  </div>
+  <%= will_paginate @policies, container: false %>
+</div>
+<br/>
+
+<%= link_to 'New Policy', new_policy_path %>

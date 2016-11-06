@@ -1,0 +1,35 @@
+<%= form_for(@policy) do |f| %>
+  <% if @policy.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@policy.errors.count, "error") %> prohibited this policy from being saved:</h2>
+
+      <ul>
+      <% @policy.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <% hidden_field_tag 'page', @current_page %>
+
+  <div class="field">
+    <%= f.label :excess %><br>
+    <%= f.number_field :excess %>
+  </div>
+  <div class="field">
+    <%= f.label :breakdown_cover %><br>
+    <%= f.text_field :breakdown_cover %>
+  </div>
+  <div class="field">
+    <%= f.label :windscreen_cover %><br>
+    <%= f.check_box :windscreen_cover %>
+  </div>
+  <div class="field">
+    <%= f.label :person_pk %><br>
+    <%= f.number_field :person_pk %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
